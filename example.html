@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function check() {
+            let maths = parseInt(document.querySelector('#math').value);
+            // console.log(maths);
+            let english = parseInt(document.querySelector('#english').value);
+            let computerSkills = parseInt(document.querySelector('#comp-skills'.value));
+            if (
+                (maths > 50 && english > 50 && computerSkills > 50) ||
+                (maths === 100 || english === 100 || computerSkills === 100)
+            ) {
+                console.log('Congratulations! You have passed the TechKaro Admission Test!');
+            } else if ((maths > 50 && english > 50) || computerSkills > 80) {
+                console.log("You have also qualified!");
+            } else {
+                console.log("Sorry! Please try again next year!");
+            }
+        }
+        function proceed() {
+            let accountBalance = 10000;
+            let withdrawlAmount = parseInt(document.querySelector('#withdrawl').value);
+            let remainingBalance = accountBalance - withdrawlAmount;
+            if (withdrawlAmount <= accountBalance) {
+                alert('Withdrawal SUCCESS! Your new balance is' + remainingBalance);
+            } else if (withdrawlAmount > accountBalance) {
+                alert('Withdrawal FAILED! Sorry, you do not have sufficient balance.');
+            } else {
+                alert('please enter amount');
+            }
+        }
+    </script>
+    <style>
+        body {
+            padding: 40px;
+            background-color: rgb(196, 223, 214);
+        }
+
+        div {
+            margin: 20px 0px;
+        }
+
+        input {
+            display: block;
+        }
+
+        #proceed {
+            margin-top:
+                20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>RESULT</h1>
+        <div>
+            <label for="math">Math</label>
+            <input id="math" type="text">
+        </div>
+
+        <div>
+            <label for="english">English</label>
+            <input id="english" type="text">
+        </div>
+
+        <div>
+            <label for="comp-skills">Computer Skills</label>
+            <input id="comp-skills" type="text">
+        </div>
+    </section>
+
+    <h5 id="result"></h5>
+    <button onclick="check()">Check</button>
+
+    <h1>Account Informantion</h1>
+    <div>
+        <label>Available Balance</label>
+        <input id="available-balance" type="text" value="10000 PKR">
+    </div>
+    <div>
+        <label>Withdrawl</label>
+        <input id="withdrawl" type="text">
+        <button id="proceed" onclick="proceed()">Proceed</button>
+    </div>
+
+
+</body>
+
+</html>
